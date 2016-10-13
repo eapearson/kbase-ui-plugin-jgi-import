@@ -1,0 +1,42 @@
+## YAML Template.
+---
+package:
+    author: Erik Pearson
+    name: jgi-import
+    description: JGI Import Tool
+    date: October 12, 2016
+source:
+    modules:
+        # JGI
+#        -
+#            module: kb_jgiimport_panel
+#            file: jgiPanel
+#        -
+#            module: kb_jgiimport_dataImport
+#            file: dataImport
+    styles:
+        -
+            file: styles
+install:
+    widgets:
+        # JGI 
+        -
+            module: panel
+            name: kb_jgiimport_panel
+            type: factory
+        -
+            module: dataImport
+            name: kb_jgiimport_dataImport
+            type: factory
+    routes:
+        -
+            path:
+                - jgi
+                - import
+                - name: workspaceId
+                - name: objectId
+                - name: objectVersion
+                  optional: true
+            widget: kb_jgiimport_panel
+            authorization: true
+                            
